@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:society_security_app/AppConstants/AppBar/app_bar.dart';
-import 'package:society_security_app/AppConstants/AppBar/app_utils.dart';
+import 'package:society_security_app/AppConstants/app_utils.dart';
 import 'package:society_security_app/Screens/Community/widgets/house_count_widget.dart';
 import 'package:society_security_app/Screens/Community/widgets/user_detail_card_widget.dart';
 

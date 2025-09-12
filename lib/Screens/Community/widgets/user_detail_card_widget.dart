@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:society_security_app/AppConstants/AppBar/app_utils.dart';
+import 'package:society_security_app/AppConstants/app_utils.dart';
 
 // fetch from model
 // use id only to parse data
