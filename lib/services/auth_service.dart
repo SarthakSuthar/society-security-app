@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:society_security_app/AppConstants/app_utils.dart';
+import 'package:society_security_app/utils/app_utils.dart';
 
 class AuthService {
   Future<bool> signup(String email, String password) async {

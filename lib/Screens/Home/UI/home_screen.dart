@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
-import 'package:society_security_app/Screens/Community/ui/community_screen.dart';
-import 'package:society_security_app/Screens/Dashboard/ui/dashboard.dart';
-import 'package:society_security_app/Screens/Profile/UI/profile.dart';
+import 'package:society_security_app/app_constants/theme/app_colors.dart';
+import 'package:society_security_app/app_constants/theme/app_constants.dart';
+import 'package:society_security_app/screens/add_post/add_post.dart';
+import 'package:society_security_app/screens/community/ui/community_screen.dart';
+import 'package:society_security_app/screens/dashboard/ui/dashboard.dart';
+import 'package:society_security_app/screens/profile/ui/profile.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,15 +26,27 @@ class _HomeScreenState extends State<HomeScreen> {
       controller: controller,
       screens: _buildScreens(),
       items: _navBarsItems(),
+      // onItemSelected: (index) {
+      //   if (index == 2) {
+      //     // Index 2 is your AddPost tab
+      //     addPost(context);
+      //   }
+      // },
       handleAndroidBackButtonPress: true, // Default is true.
       resizeToAvoidBottomInset:
           true, // This needs to be true if you want to move up the screen on a non-scrollable screen when keyboard appears. Default is true.
       stateManagement: true, // Default is true.
       hideNavigationBarWhenKeyboardAppears: true,
-      // popBehaviorOnSelectedNavBarItemPress: PopActionScreensType.all,
+      // popBehaviorOnSelectedNavBarItemPress: PopActionS  creensType.all,
       padding: const EdgeInsets.only(top: 8),
-      backgroundColor: Colors.black,
+      backgroundColor: AppColors.primaryBlue,
       isVisible: true,
+      decoration: NavBarDecoration(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(AppConstants.radius),
+        ),
+        colorBehindNavBar: Colors.white,
+      ),
       animationSettings: const NavBarAnimationSettings(
         navBarItemAnimation: ItemAnimationSettings(
           // Navigation Bar's items animation properties.
@@ -60,43 +75,65 @@ class _HomeScreenState extends State<HomeScreen> {
     return [
       PersistentBottomNavBarItem(
         icon: Icon(CupertinoIcons.home),
-        title: ("Home"),
-        activeColorPrimary: CupertinoColors.activeBlue,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
-        // scrollController: _scrollController1,
-        routeAndNavigatorSettings: RouteAndNavigatorSettings(
-          initialRoute: "/",
-          routes: {
-            "/first": (final context) => const Dashboard(),
-            "/second": (final context) => const ProfileScreen(),
-          },
-        ),
-      ),
-      PersistentBottomNavBarItem(
-        icon: Icon(CupertinoIcons.person_3),
-        title: ("Community"),
-        activeColorPrimary: CupertinoColors.activeBlue,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
+        // title: ("Home"),
+        activeColorPrimary: Colors.white,
+        inactiveColorPrimary: Colors.white54,
         // scrollController: _scrollController1,
         routeAndNavigatorSettings: RouteAndNavigatorSettings(
           initialRoute: "/",
           routes: {
             "/first": (final context) => const Dashboard(),
             "/second": (final context) => const CommunityScreen(),
+            "/third": (final context) => const ProfileScreen(),
+            // "/third": (final context) => Dashboard(),
           },
         ),
       ),
       PersistentBottomNavBarItem(
+        icon: Icon(CupertinoIcons.person_3),
+        // title: ("Community"),
+        activeColorPrimary: Colors.white,
+        inactiveColorPrimary: Colors.white54,
+        // scrollController: _scrollController1,
+        routeAndNavigatorSettings: RouteAndNavigatorSettings(
+          initialRoute: "/",
+          routes: {
+            "/first": (final context) => const Dashboard(),
+            "/second": (final context) => const CommunityScreen(),
+            "/third": (final context) => const ProfileScreen(),
+            // "/third": (final context) => Dashboard(),
+          },
+        ),
+      ),
+      // PersistentBottomNavBarItem(
+      //   icon: Icon(CupertinoIcons.add_circled),
+      //   // title: ("Community"),
+      //   activeColorPrimary: Colors.white,
+      //   inactiveColorPrimary: Colors.white54,
+      //   // scrollController: _scrollController1,
+      //   routeAndNavigatorSettings: RouteAndNavigatorSettings(
+      //     initialRoute: "/",
+      //     routes: {
+      //       "/first": (final context) => const Dashboard(),
+      //       "/second": (final context) => const CommunityScreen(),
+      //       "/third": (final context) => Dashboard(),
+      //       "/fourth": (final context) => const ProfileScreen(),
+      //     },
+      //   ),
+      // ),
+      PersistentBottomNavBarItem(
         icon: Icon(CupertinoIcons.person),
-        title: ("Profile"),
-        activeColorPrimary: CupertinoColors.activeBlue,
-        inactiveColorPrimary: CupertinoColors.systemGrey,
+        // title: ("Profile"),
+        activeColorPrimary: Colors.white,
+        inactiveColorPrimary: Colors.white54,
         // scrollController: _scrollController2,
         routeAndNavigatorSettings: RouteAndNavigatorSettings(
           initialRoute: "/",
           routes: {
             "/first": (final context) => const Dashboard(),
-            "/second": (final context) => const ProfileScreen(),
+            "/second": (final context) => const CommunityScreen(),
+            "/third": (final context) => const ProfileScreen(),
+            // "/third": (final context) => Dashboard(),
           },
         ),
       ),

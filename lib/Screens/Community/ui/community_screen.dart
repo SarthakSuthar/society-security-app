@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:society_security_app/AppConstants/AppBar/app_bar.dart';
-import 'package:society_security_app/AppConstants/app_utils.dart';
-import 'package:society_security_app/Screens/Community/widgets/house_count_widget.dart';
-import 'package:society_security_app/Screens/Community/widgets/user_detail_card_widget.dart';
+import 'package:society_security_app/widgets/app_bar.dart';
+import 'package:society_security_app/utils/app_utils.dart';
+import 'package:society_security_app/screens/community/widgets/house_count_widget.dart';
+import 'package:society_security_app/screens/community/widgets/user_detail_card_widget.dart';
 
 class CommunityScreen extends StatefulWidget {
   const CommunityScreen({super.key});
@@ -16,7 +16,7 @@ class _CommunityScreenState extends State<CommunityScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
-      appBar: appBar() as PreferredSizeWidget,
+      appBar: const CustomAppBar(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: SingleChildScrollView(

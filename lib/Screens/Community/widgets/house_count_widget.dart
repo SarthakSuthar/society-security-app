@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:society_security_app/app_constants/theme/app_constants.dart';
 
 Widget houseCountWidget({
   required int count,
   required String title,
   required Color color,
 }) {
-  return Card(
-    color: Colors.white,
-    elevation: 0,
-    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+  return Container(
+    margin: EdgeInsets.all(AppConstants.spaceS),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(AppConstants.radius),
+      border: Border.all(color: Colors.grey, width: AppConstants.boarder),
+    ),
     child: SizedBox(
       height: 120,
       child: Padding(
@@ -21,7 +25,7 @@ Widget houseCountWidget({
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: color, // 👈 colored number
+                color: color,
               ),
               textAlign: TextAlign.center,
             ),

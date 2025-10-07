@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:society_security_app/AppConstants/app_utils.dart';
+import 'package:society_security_app/app_constants/theme/app_constants.dart';
+import 'package:society_security_app/utils/app_utils.dart';
 
 // fetch from model
 // use id only to parse data
@@ -35,7 +36,8 @@ class _ContactCardState extends State<ContactCard> {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(AppConstants.radius),
+        border: Border.all(color: Colors.grey, width: AppConstants.boarder),
       ),
       margin: const EdgeInsets.symmetric(vertical: 8),
       child: Padding(
@@ -127,7 +129,11 @@ class _ContactCardState extends State<ContactCard> {
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.grey.shade300,
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(AppConstants.radius),
+                      border: Border.all(
+                        color: Colors.grey,
+                        width: AppConstants.boarder,
+                      ),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
@@ -153,7 +159,11 @@ class _ContactCardState extends State<ContactCard> {
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.grey.shade300,
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.circular(AppConstants.radius),
+                      border: Border.all(
+                        color: Colors.grey,
+                        width: AppConstants.boarder,
+                      ),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
@@ -256,7 +266,13 @@ class _ContactCardState extends State<ContactCard> {
                         child: Container(
                           decoration: BoxDecoration(
                             color: Colors.grey.shade300,
-                            borderRadius: BorderRadius.circular(30),
+                            borderRadius: BorderRadius.circular(
+                              AppConstants.radius,
+                            ),
+                            border: Border.all(
+                              color: Colors.grey,
+                              width: AppConstants.boarder,
+                            ),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
@@ -282,7 +298,13 @@ class _ContactCardState extends State<ContactCard> {
                         child: Container(
                           decoration: BoxDecoration(
                             color: Colors.grey.shade300,
-                            borderRadius: BorderRadius.circular(30),
+                            borderRadius: BorderRadius.circular(
+                              AppConstants.radius,
+                            ),
+                            border: Border.all(
+                              color: Colors.grey,
+                              width: AppConstants.boarder,
+                            ),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.symmetric(

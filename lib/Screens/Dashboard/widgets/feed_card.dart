@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:society_security_app/app_constants/theme/app_constants.dart';
+import 'package:society_security_app/widgets/app_container.dart';
 
 /// Card for home feed
 Widget feedCard({required bool? isNotice}) {
   return Padding(
-    padding: const EdgeInsets.all(16.0),
-    child: Card(
-      color: Colors.white,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+    padding: const EdgeInsets.all(AppConstants.paddingM),
+    child: AppContainer(
       child: Stack(
         children: [
           Column(
@@ -16,18 +16,29 @@ Widget feedCard({required bool? isNotice}) {
               ListTile(
                 leading: ClipRRect(
                   borderRadius: BorderRadiusGeometry.circular(60),
-                  child: Image.asset('assets/images/user.png', scale: 12),
+                  child: Image.asset(
+                    'assets/images/man_avatar.jpg',
+                    scale: AppConstants.spaceM,
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 title: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       "Sarthak Suthar",
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     Text(
                       "G502",
-                      style: TextStyle(color: Colors.black, fontSize: 15),
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ],
                 ),
@@ -47,10 +58,11 @@ Widget feedCard({required bool? isNotice}) {
                   vertical: 8.0,
                   horizontal: 16.0,
                 ),
-                child: Text(
-                  "Water supply will be suspended tomorrow from 10 AM to 2 PM for maintenance work in Block A.",
-                  style: TextStyle(fontSize: 15),
-                ),
+                child: Text('''
+Dear Residents,
+This is to inform all members of the Vaghodia Heights Housing Society that the Monthly General Body Meeting will be held as per the details below:
+📅 Date: Sunday, 24th August 2025🕒 Time: 5:00 PM
+''', style: TextStyle(fontSize: 15)),
               ),
             ],
           ),
@@ -68,7 +80,9 @@ Widget feedCard({required bool? isNotice}) {
                         color: isNotice == true
                             ? Colors.greenAccent[100]
                             : Colors.blueAccent[100],
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(
+                          AppConstants.radius,
+                        ),
                         border: Border.all(
                           color: isNotice == true ? Colors.green : Colors.blue,
                           width: 2,
@@ -84,11 +98,12 @@ Widget feedCard({required bool? isNotice}) {
                             : Text("Announcement"),
                       ),
                     ),
+                    const SizedBox(height: 5),
                     Row(
                       children: [
-                        Icon(CupertinoIcons.calendar, size: 18),
+                        Icon(CupertinoIcons.calendar, size: 14),
                         Text(' '),
-                        Text("18/08/2025"),
+                        Text("18/08/2025", style: TextStyle(fontSize: 12)),
                       ],
                     ),
                   ],
